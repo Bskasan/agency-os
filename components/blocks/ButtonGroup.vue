@@ -14,7 +14,7 @@ function getUrl(button: BlockButton): string | undefined {
 		case 'external':
 			return button.external_url ?? undefined;
 		default:
-			return undefined;
+			return undefined;	
 	}
 }
 </script>

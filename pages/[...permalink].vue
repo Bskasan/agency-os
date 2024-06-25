@@ -47,6 +47,7 @@ const { data: page } = await useAsyncData(
 										'image',
 										'buttons',
 										'image_position',
+										'right_content',
 										{ button_group: ['*', { buttons: ['*', { page: ['permalink'], post: ['slug'] }] }] },
 									],
 									block_faqs: ['id', 'title', 'faqs', 'headline', 'alignment'],

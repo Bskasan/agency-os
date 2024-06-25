@@ -17,9 +17,9 @@ defineProps<{
 			<BlocksButtonGroup v-if="data.button_group" :data="data.button_group as BlockButtonGroup" />
 		</div>
 		<!-- Image -->
+		<!-- -->
 		<div
-			v-if="data.image"
-			class="overflow-hidden border lg:relative lg:h-full dark:border-gray-700 rounded-card"
+			class="overflow-hidden items-center justify-center lg:relative lg:h-full"
 			:class="data.image_position === 'left' ? 'order-first lg:-ml-48 md:-ml-16' : 'lg:-mr-48 md:-mr-16 '"
 		>
 			<NuxtImg
@@ -28,6 +28,14 @@ defineProps<{
 				:src="data.image as string"
 				alt=""
 			/>
+
+			<div v-if="data.image_position === 'right-content'" class="w-full h-full">
+				<TypographyProse
+					v-if="data.right_content"
+					:content="data.right_content"
+					:class="['py-6 font-display w-full h-full']"
+				/>
+			</div>
 		</div>
 	</BlockContainer>
 </template>

@@ -5,6 +5,7 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 export default {
 	darkMode: 'class',
 	content: [
+		'./node_modules/flowbite/**/*.{js,ts}',
 		'./components/**/*.{vue,js,ts}',
 		'./layouts/**/*.vue',
 		'./pages/**/*.vue',
@@ -49,6 +50,7 @@ export default {
 		extend: {},
 	},
 	plugins: [
+		require('flowbite/plugin'),
 		tailwindcssForms,
 		// Formkit Plugin for Tailwind
 		// https://formkit.com/guides/create-a-tailwind-theme
