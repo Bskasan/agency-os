@@ -63,12 +63,12 @@ const {
 			<div class="flex items-center justify-end flex-shrink-0 space-x-2">
 				<DarkModeToggle class="hidden text-gray-200 md:block hover:text-gray-400" bg="dark" />
 			</div>
+			<div class="hidden h-full gap-4 md:flex">
+				<UButton to="/contact-us" color="primary" size="xl">(410) 425-0100</UButton>
+				<UButton to="/portal" color="primary" variant="ghost" size="xl">Free Consultation</UButton>
+			</div>
 		</div>
 
-		<div class="hidden h-full gap-4 md:flex">
-			<UButton to="/contact-us" color="primary" size="xl">Let's Talk</UButton>
-			<UButton to="/portal" color="primary" variant="ghost" size="xl">Login</UButton>
-		</div>
 		<NavigationMobileMenu v-if="navigation" :navigation="navigation" />
 	</header>
 </template>
