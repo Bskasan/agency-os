@@ -11,3 +11,5 @@ export interface BlockHero {
 	right_content?: string | null;
 	button_group?: (string | BlockButtonGroup) | null;
 }
+
+

@@ -50,6 +50,14 @@ const { data: page } = await useAsyncData(
 										'right_content',
 										{ button_group: ['*', { buttons: ['*', { page: ['permalink'], post: ['slug'] }] }] },
 									],
+									block_hero_withoutimage: [
+										'id',
+										'title',
+										'headline',
+										'content',
+										'image',
+										{ button_group: ['*', { buttons: ['*', { page: ['permalink'], post: ['slug'] }] }] },
+									],
 									block_faqs: ['id', 'title', 'faqs', 'headline', 'alignment'],
 									block_richtext: ['id', 'title', 'headline', 'content', 'alignment'],
 									block_testimonials: [
