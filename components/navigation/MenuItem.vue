@@ -52,14 +52,14 @@ watch(
 			leave-to-class="translate-y-1 opacity-0"
 		>
 			<PopoverPanel
-				class="absolute z-10 w-screen max-w-md mt-4 overflow-hidden bg-gray-800 shadow-lg rounded-panel top-full"
+				class="absolute z-10 w-screen max-w-md mt-4 overflow-hidden bg-gray-200 shadow-lg rounded-panel top-full"
 			>
 				<div class="p-4">
 					<NuxtLink
 						v-for="childItem in item.children as NavigationItem[]"
 						:key="childItem.id"
 						:href="getNavItemUrl(childItem) as RouteLocationRaw"
-						class="relative flex p-4 leading-6 transition duration-150 rounded-panel group gap-x-6 hover:bg-gray-900"
+						class="relative flex p-4 leading-6 transition duration-150 rounded-panel group gap-x-6 hover:text-red-600"
 					>
 						<div
 							class="flex items-center justify-center flex-none p-2 mt-1 border rounded-button h-11 w-11 border-primary"
@@ -71,7 +71,7 @@ watch(
 							/>
 						</div>
 						<div class="">
-							<p class="block font-medium text-white font-display">
+							<p class="block font-medium text-black font-display">
 								{{ childItem.title }}
 							</p>
 							<p v-if="childItem.label" class="mt-1 text-sm leading-tight text-gray-400">
@@ -87,6 +87,6 @@ watch(
 
 <style lang="postcss">
 .menu-link {
-	@apply text-white hover:bg-gray-700 transition duration-150 font-medium hover:text-white py-2 px-3 inline-flex items-center font-display outline-none rounded-button;
+	@apply text-black hover:bg-gray-700 transition duration-150 font-medium hover:text-black py-2 px-3 inline-flex items-center font-display outline-none rounded-button;
 }
 </style>

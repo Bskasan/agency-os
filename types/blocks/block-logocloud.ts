@@ -1,14 +1,14 @@
 import type { File } from '../system';
 
-export interface BlockLogocloud {
+export interface BlockLogoCloud {
 	headline?: string | null;
 	id?: string;
 	title?: string | null;
-	logos?: (string | BlockLogocloudFile)[];
+	logos?: (string | BlockLogoCloudFile)[];
 }
-export interface BlockLogocloudFile {
+export interface BlockLogoCloudFile {
 	id?: string;
 	sort?: number | null;
-	block_logocloud_id?: (string | BlockLogocloud) | null;
+	block_logocloud_id?: (string | BlockLogoCloud) | null;
 	directus_files_id?: (string | File) | null;
 }

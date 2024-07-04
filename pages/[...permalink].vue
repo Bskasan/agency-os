@@ -110,6 +110,7 @@ const { data: page } = await useAsyncData(
 											],
 										},
 									],
+									block_imagecloud: ['id', 'title', 'headline', { images: ['id', 'title', 'description'] }],
 									block_gallery: [
 										'id',
 										'title',
@@ -167,7 +168,7 @@ const { data: page } = await useAsyncData(
 											],
 										},
 									],
-									block_divider: ['id', 'title'],
+									block_divider: ['id', 'title', 'headline'],
 									block_team: ['*'],
 									block_html: ['*'],
 									block_video: ['*'],

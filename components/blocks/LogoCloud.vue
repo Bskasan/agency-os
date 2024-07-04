@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { BlockLogocloud, BlockLogocloudFile, File } from '~/types';
+import type { BlockLogoCloud, BlockLogoCloudFile, File } from '~/types';
 
 defineProps<{
-	data: BlockLogocloud;
+	data: BlockLogoCloud;
 }>();
 
 const { fileUrl } = useFiles();

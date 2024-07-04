@@ -52,7 +52,7 @@ const {
 
 <template>
 	<header class="relative w-full mx-auto space-y-3 md:flex md:items-center md:space-y-0 md:gap-x-4">
-		<div class="flex items-center bg-gray-900 justify-between p-4 md:flex-1 rounded-card">
+		<div class="flex items-center justify-between p-4 md:flex-1 rounded-card">
 			<NuxtLink href="/" class="p-2 px">
 				<Logo class="h-8 text-white" />
 				<span class="sr-only">{{ title }}</span>
