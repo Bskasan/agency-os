@@ -10,7 +10,7 @@ const { fileUrl } = useFiles();
 <template>
 	<BlockContainer>
 		<TypographyTitle v-if="data?.title">{{ data?.title }}</TypographyTitle>
-		<TypographyHeadline v-if="data?.headline" :content="data?.headline" size="lg" />
+		<TypographyHeadline class="text-center" v-if="data?.headline" :content="data?.headline" size="lg" />
 		<div class="flow-root mt-8 lg:mt-10">
 			<div v-if="data.logos && data.logos.length > 0" class="grid gap-2 md:grid-cols-4 md:gap-4 lg:grid-cols-10">
 				<div

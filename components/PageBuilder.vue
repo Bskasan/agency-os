@@ -19,6 +19,7 @@ const componentMap: Record<BlockType, any> = {
 	block_divider: resolveComponent('BlocksDivider'),
 	block_hero_withoutimage: resolveComponent('BlocksHeroWithoutImage'),
 	block_imagecloud: resolveComponent('BlocksImageCloud'),
+	block_reviews: resolveComponent('BlocksReviews'),
 };
 
 const props = defineProps<{

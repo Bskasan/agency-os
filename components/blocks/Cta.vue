@@ -8,11 +8,10 @@ defineProps<{
 
 <template>
 	<BlockContainer>
-		<div class="relative overflow-hidden p-8 text-gray-900 md:px-10 md:py-8 border-primary/50 rounded-panel">
+		<div class="relative overflow-hidden p-8 text-gray-900 md:px-10 md:py-8">
 			<div class="absolute inset-0 bg-red-500" />
-			<div class="absolute inset-0" />
 			<div class="relative md:flex md:items-center md:justify-between md:space-x-4">
-				<div class="mb-4 md:mb-0">
+				<div class="mb-4 md:mb-0 text-left">
 					<TypographyTitle v-if="data?.title" class="text-lg sm:text-xl md:text-2xl lg:text-3xl">
 						{{ data.title }}
 					</TypographyTitle>

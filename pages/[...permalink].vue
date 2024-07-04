@@ -81,6 +81,19 @@ const { data: page } = await useAsyncData(
 										},
 									],
 									block_quote: ['id', 'title', 'subtitle', 'content'],
+									block_reviews: [
+										'id',
+										'title',
+										'headline',
+										{
+											button_group: [
+												'*',
+												{
+													buttons: ['*', { page: ['permalink'], post: ['slug'] }],
+												},
+											],
+										},
+									],
 									block_cta: [
 										'id',
 										'title',

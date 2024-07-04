@@ -60,9 +60,7 @@ const {
 			<nav class="hidden md:flex md:space-x-4 lg:space-x-6" aria-label="Global">
 				<NavigationMenuItem v-for="item in navigation?.items" :key="item.id" :item="item" />
 			</nav>
-			<div class="flex items-center justify-end flex-shrink-0 space-x-2">
-				<DarkModeToggle class="hidden text-gray-200 md:block hover:text-gray-400" bg="dark" />
-			</div>
+
 			<div class="hidden h-full gap-4 md:flex">
 				<UButton to="/contact-us" color="primary" size="xl">(410) 425-0100</UButton>
 				<UButton to="/portal" color="primary" variant="ghost" size="xl">Free Consultation</UButton>
