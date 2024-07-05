@@ -85,6 +85,7 @@ const { data: page } = await useAsyncData(
 										'id',
 										'title',
 										'headline',
+										'reviews_section',
 										{
 											button_group: [
 												'*',
@@ -136,6 +137,14 @@ const { data: page } = await useAsyncData(
 											],
 										},
 									],
+									block_infobox: [
+										'id',
+										'title',
+										'headline',
+										{
+											items: ['id', 'title', 'content', 'image'],
+										},
+									],
 									block_steps: [
 										'id',
 										'title',
@@ -181,7 +190,7 @@ const { data: page } = await useAsyncData(
 											],
 										},
 									],
-									block_divider: ['id', 'title', 'headline'],
+									block_divider: ['id', 'title', 'headline', 'description'],
 									block_team: ['*'],
 									block_html: ['*'],
 									block_video: ['*'],

@@ -20,6 +20,7 @@ const componentMap: Record<BlockType, any> = {
 	block_hero_withoutimage: resolveComponent('BlocksHeroWithoutImage'),
 	block_imagecloud: resolveComponent('BlocksImageCloud'),
 	block_reviews: resolveComponent('BlocksReviews'),
+	block_infobox: resolveComponent('BlockInfoBox'),
 };
 
 const props = defineProps<{

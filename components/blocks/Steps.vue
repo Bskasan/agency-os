@@ -53,8 +53,7 @@ const steps = computed(() => {
 						/>
 					</div>
 
-					<div class="w-full mt-4 text-left md:mt-0">
-						<TypographyTitle v-if="data.show_step_numbers">Step {{ stepIdx + 1 }}</TypographyTitle>
+					<div class="w-full mt-4 md:mt-0">
 						<TypographyHeadline v-if="step.title" :content="step.title" size="sm" />
 						<TypographyProse v-if="step.content" :content="step.content" class="mt-4" />
 						<BlocksButtonGroup v-if="step.button_group" :data="step.button_group as BlockButtonGroup" class="mt-4" />

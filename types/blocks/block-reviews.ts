@@ -5,4 +5,5 @@ export interface BlockReviews {
 	title?: string;
 	headline?: string;
 	button_group?: (string | BlockButtonGroup) | null;
+	reviews_section?: string;
 }
