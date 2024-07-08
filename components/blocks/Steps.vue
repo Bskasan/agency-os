@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import type { BlockStep, BlockStepItem, BlockButtonGroup } from '~/types/';
+import type { BlockStep, BlockStepItem } from '~/types/';
+import { computed, unref } from 'vue';
 
 const props = defineProps<{
 	data: BlockStep;
@@ -10,81 +11,44 @@ const steps = computed(() => {
 	return unref(props.data)?.steps as BlockStepItem[];
 });
 </script>
-<template>
-	<BlockContainer>
-		<TypographyTitle v-if="data.title">{{ data.title }}</TypographyTitle>
-		<TypographyHeadline v-if="data.headline" :content="data.headline" size="lg" />
-		<div class="mt-8">
-			<template v-for="(step, stepIdx) in steps" :key="stepIdx">
-				<div
-					v-motion
-					:initial="{
-						opacity: 0,
-						scale: 1,
-						x: isEven(stepIdx) ? -200 : 200,
-					}"
-					:visibleOnce="{
-						opacity: 1,
-						x: 0,
-						scale: 1,
-						transition: {
-							duration: 300,
-						},
-					}"
-					:delay="300"
-					:class="[
-						{
-							'mr-8 md:mr-24': isEven(stepIdx),
-							'ml-8 md:ml-24': !isEven(stepIdx),
-						},
-						{
-							'md:flex-row': isEven(stepIdx) && !data.alternate_image_position,
-							'md:flex-row-reverse md:space-x-reverse': !isEven(stepIdx) && data.alternate_image_position,
-						},
-						'relative p-6 md:flex md:space-x-8 ring-primary/50 ring-1 rounded-panel',
-					]"
-				>
-					<div v-if="step.image" class="flex-shrink-0 dark:bg-white dark:brightness-90 rounded-panel">
-						<NuxtImg
-							v-if="step.image"
-							class="object-cover w-full h-32 rounded-card md:w-48 md:h-full"
-							:src="safeRelationId(step.image) as string"
-							:alt="safeRelation(step.image)?.description ?? ''"
-						/>
-					</div>
 
-					<div class="w-full mt-4 md:mt-0">
-						<TypographyHeadline v-if="step.title" :content="step.title" size="sm" />
-						<TypographyProse v-if="step.content" :content="step.content" class="mt-4" />
-						<BlocksButtonGroup v-if="step.button_group" :data="step.button_group as BlockButtonGroup" class="mt-4" />
+<template>
+	<BlockContainer
+		class="relative flex flex-col justify-between text-center h-full max-w-6xl px-4 sm:px-6 lg:px-8 mx-auto"
+	>
+		<div class="w-full">
+			<!-- First row of steps -->
+			<div class="flex flex-col w-full mb-5 sm:flex-row sm:space-x-4">
+				<div v-for="(step, stepIdx) in steps.slice(0, 2)" :key="stepIdx" class="w-full mb-5 sm:mb-0 sm:w-1/2">
+					<div class="relative h-full ml-0 mr-0">
+						<div class="relative h-full p-3 bg-white text-center border-2 rounded-lg">
+							<NuxtImg :src="step.image" alt="" class="h-32 w-32 mx-auto rounded-lg" />
+							<div class="flex items-center justify-center -mt-1">
+								<h3 class="ml-3 text-lg font-bold text-gray-800 text-center">{{ step.title }}</h3>
+							</div>
+							<div class="mb-2 text-gray-600" v-html="step.content"></div>
+						</div>
 					</div>
 				</div>
-				<svg
-					v-if="stepIdx !== steps.length - 1"
-					class="h-16 m-0 mx-auto stroke-current text-primary md:h-20 steps-animation"
-					viewBox="0 0 60 200"
-				>
-					<line class="path" x1="15" x2="15" y1="0" y2="200" stroke-width="8" stroke-linecap="square" />
-				</svg>
-			</template>
+			</div>
+			<!-- Second row of steps -->
+			<div class="flex flex-col w-full sm:flex-row sm:space-x-4">
+				<div v-for="(step, stepIdx) in steps.slice(2, 5)" :key="stepIdx + 2" class="w-full mb-5 sm:mb-0 sm:w-1/3">
+					<div class="relative h-full ml-0 mr-0">
+						<div class="relative h-full p-3 bg-white border-2 rounded-lg">
+							<NuxtImg :src="step.image" alt="" class="w-32 h-32 mx-auto mb-3 rounded-lg" />
+							<div class="flex items-center justify-center">
+								<h3 class="ml-3 text-lg font-bold text-gray-800 text-center">{{ step.title }}</h3>
+							</div>
+							<div class="mb-2 text-gray-600" v-html="step.content"></div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</BlockContainer>
 </template>
 
-<style>
-.steps-animation .path {
-	stroke-dasharray: 1, 30;
-	-webkit-animation: dash 5s linear both infinite;
-	animation: dash 5s linear both infinite;
-}
-
-@keyframes dash {
-	from {
-		stroke-dashoffset: 0;
-	}
-
-	to {
-		stroke-dashoffset: -15rem;
-	}
-}
+<style scoped>
+/* Additional styles if needed */
 </style>

@@ -10,7 +10,7 @@ defineProps<{ data: DividerBlockProps }>();
 
 <template>
 	<BlockContainer class="flex flex-col items-center">
-		<div v-if="data.title" class="flex flex-col items-center text-center mb-4">
+		<div v-if="data.title" class="flex flex-col items-center text-center mb-2">
 			<TypographyTitle>
 				{{ data.title }}
 			</TypographyTitle>
@@ -21,7 +21,7 @@ defineProps<{ data: DividerBlockProps }>();
 			v-if="data.description"
 			:content="data.description"
 			size="lg"
-			class="max-w-full text-center my-6 mx-6 font-light text-gray-500 lg:mb-8 sm:text-lg lg:text-xl dark:text-gray-400"
+			class="max-w-full text-center my-2 font-light text-gray-500 sm:text-lg lg:text-xl dark:text-gray-400"
 		/>
 	</BlockContainer>
 </template>
